@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.signUpForm {
+  display: grid;
+  grid-template-rows: auto auto;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 600px;
+  padding: 2%;
+  padding-top: 1%;
+  background-color: rgba(0, 0, 0, 0.301);
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
+
+.inputsBox {
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 5px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: gray;
+}
+
+.button {
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: purple;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.messages {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.349);
+}
+
+.alinks {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .signUpForm {
+    width: 300px;
+  }
+}

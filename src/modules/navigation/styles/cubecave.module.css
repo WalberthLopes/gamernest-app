@@ -1,0 +1,25 @@
+.triggerButton {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.triggerButton:hover {
+  color: lightgray;
+  cursor: pointer;
+}
+
+.content {
+  background-color: black;
+}
+
+.header {
+  color: gray;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.logo {
+  width: 200px;
+}
