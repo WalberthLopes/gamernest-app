@@ -1,0 +1,134 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 247px;
+  column-gap: 20px;
+}
+
+.title {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.inputs {
+  text-align: center;
+}
+
+.section {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.fileSection {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.commandsSection {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 10px;
+}
+
+.valueSection {
+  text-align: left;
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 5px;
+}
+
+.label {
+  display: block;
+}
+
+.input {
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  border: none;
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  border: none;
+  outline: none;
+}
+
+.button {
+  background-color: rgb(1, 160, 1);
+  font-weight: bold;
+  border: 0;
+  border-radius: 0;
+  padding: 5px;
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  outline: none;
+}
+
+.loadingButton {
+  background-color: goldenrod;
+  font-weight: bold;
+  border: 0;
+  border-radius: 0;
+  padding: 5px;
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  outline: none;
+}
+
+.button:hover {
+  background-color: limegreen;
+  cursor: pointer;
+}
+
+/* PRÉVIA DO ITEM */
+
+.preview {
+  text-align: center;
+}
+
+.content {
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 5px;
+  background-color: black;
+}
+
+.contentTitle {
+  font-size: 14px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 10px;
+  justify-content: center;
+}
+
+.contentImage {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+}
+
+.contentValue {
+  font-size: 16px;
+}
+
+.contentButton {
+  padding: 5px;
+}
+
+.buyButton {
+  background-color: rgb(1, 160, 1);
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0;
+  padding: 5px;
+  width: 100%;
+  outline: none;
+}
+
+.buyButton:hover {
+  background-color: limegreen;
+  cursor: pointer;
+}

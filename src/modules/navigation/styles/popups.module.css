@@ -2,6 +2,7 @@
   background-color: transparent;
   border: none;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
 }
 
 .signInButton:hover {
@@ -25,6 +26,7 @@
 .content {
   width: 200px;
   background-color: rgb(29, 29, 29);
+  color: white;
 }
 
 .header {

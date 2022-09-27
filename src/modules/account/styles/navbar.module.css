@@ -1,0 +1,79 @@
+.container {
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(5, [col-start] max-content [col-end]);
+  height: min-content;
+  background-color: rgb(14, 9, 14);
+  border: 1px groove rgb(32, 21, 32);
+  width: 100%;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.button {
+  padding: 25px;
+  background-color: transparent;
+  border: none;
+  border-left: 1px groove rgb(14, 9, 14);
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.button:hover {
+  background-color: rgb(32, 21, 32);
+  cursor: pointer;
+}
+
+.button:not(.btn):focus {
+  background-color: rgb(32, 21, 32);
+}
+
+@media screen and (min-width: 780px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .desktop {
+    display: none;
+  }
+
+  .main {
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+  }
+
+  .mobile {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .mobileMenu {
+    background-color: rgb(51, 0, 51);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+  }
+
+  .mobilePopup {
+    width: 150px;
+  }
+
+  .mobileColumns {
+    text-align: center;
+    background-color: rgb(51, 0, 51);
+  }
+
+  .mobileColumn {
+    border-bottom: 1px solid lightgrey;
+  }
+
+  .mobileButton {
+    width: 90%;
+  }
+}

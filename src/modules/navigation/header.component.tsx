@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
 
-// Styles
 import styles from "./styles/header.module.css";
 
-// Components
 import ProfilePopup from "./utils/profile.popup";
 import SignInPopup from "./utils/signIn.popup";
 import Navbar from "./components/navbar.component";
 
-// Functions
 import { getCurrentUser } from "./functions/getCurrentUser";
-import { isAuth } from "./functions/isAuth";
 import CubecavePopup from "./utils/cubecave.popup";
 
 const Header = () => {
@@ -26,8 +22,6 @@ const Header = () => {
       });
     };
     getUser();
-    const response = isAuth();
-    console.log(response);
   }, []);
 
   return (
