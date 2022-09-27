@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import signUp from "./functions/signUp";
+import signUp from "../functions/signUp";
 
-import styles from "./styles/createAccount.module.css";
+import styles from "../styles/createAccount.module.css";
 
-import logo from "../navigation/images/logo.png";
+import logo from "../../navigation/images/logo.png";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
