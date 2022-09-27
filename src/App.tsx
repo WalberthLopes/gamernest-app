@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import CreateAccount from "./modules/account/CreateAccount";
 import Home from "./modules/home/Home";
 import Profile from "./modules/account/Profile";
 import Shop from "./modules/shop/Shop";
+import CreateAccount from "./modules/account/CreateAccount";
 
 function App() {
   return (
