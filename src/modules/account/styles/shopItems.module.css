@@ -1,0 +1,19 @@
+.container {
+  width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background-color: rgb(32, 21, 32);
+  border: 1px groove rgb(24, 16, 24);
+  padding-top: 20px;
+  height: 100vh;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  text-align: center;
+}

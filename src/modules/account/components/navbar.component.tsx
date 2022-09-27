@@ -1,26 +1,15 @@
-// Functions
-import MobileMenuComponent from "./mobileMenu.component";
-
-// Styles
 import styles from "../styles/navbar.module.css";
 
-// Server logo
-import logo from "../images/logo.png";
-
-const Navbar = () => {
+const ProfileNavbar = ({ username }: any) => {
   return (
     <div className={styles.container}>
       <div className={styles.main}>
-        <img className={styles.logo} src={logo} />
-
-        <div className={styles.desktop}>
-          <div />
-
+        <div className={styles.content}>
           <button
-            onClick={() => (location.href = "/")}
+            onClick={() => (location.href = `/account/${username}`)}
             className={styles.button}
           >
-            HOME
+            PERFIL
           </button>
 
           <button
@@ -31,10 +20,10 @@ const Navbar = () => {
           </button>
 
           <button
-            onClick={() => (location.href = "/noticias")}
+            onClick={() => (location.href = "/support/ticket")}
             className={styles.button}
           >
-            NOTÍCIAS
+            SUPORTE
           </button>
 
           <button
@@ -52,12 +41,9 @@ const Navbar = () => {
             LOJA
           </button>
         </div>
-        <div className={styles.mobile}>
-          <MobileMenuComponent />
-        </div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default ProfileNavbar;

@@ -10,7 +10,7 @@ const signIn = async (email: string, password: string) => {
     if (response.data.success === false) {
       return response.data.message;
     } else {
-      location.reload();
+      location.href = `/account/${response.data.message}`;
     }
   } catch (error) {
     console.log(error);

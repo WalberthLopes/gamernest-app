@@ -1,4 +1,5 @@
-// Styles
+import { copyToClipboard } from "../functions/copyToClipboard";
+
 import styles from "../styles/lastNews.module.css";
 
 const LastNewsComponent = () => {
@@ -18,7 +19,9 @@ const LastNewsComponent = () => {
 
       <div className={styles.buttons}>
         <button className={styles.button}>SAIBA MAIS</button>
-        <button className={styles.button}>JOGAR</button>
+        <button className={styles.button} onClick={() => copyToClipboard()}>
+          JOGAR
+        </button>
       </div>
     </div>
   );

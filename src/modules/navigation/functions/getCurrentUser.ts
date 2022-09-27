@@ -6,7 +6,9 @@ const getCurrentUser = async () => {
       import.meta.env.VITE_API_URL + "/api/get-current-user"
     );
 
-    return response.data;
+    if (response.data !== false) {
+      return response.data;
+    } else return;
   } catch (error) {
     console.log(error);
   }

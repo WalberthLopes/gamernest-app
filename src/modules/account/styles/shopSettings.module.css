@@ -1,0 +1,42 @@
+.container {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 160px auto;
+  column-gap: 10px;
+}
+
+.navbar {
+  background-color: rgb(14, 9, 14);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: max-content;
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 5px;
+}
+
+.content {
+  background-color: rgb(14, 9, 14);
+  padding: 10px;
+}
+
+.button {
+  width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.button:hover {
+  background-color: rgb(32, 21, 32);
+  cursor: pointer;
+}
+
+.button:focus {
+  background-color: rgb(32, 21, 32);
+}

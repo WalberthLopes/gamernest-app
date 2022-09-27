@@ -1,10 +1,16 @@
 import styles from "./styles/footer.module.css";
 
+import PrivacyPolicy from "./utils/privacyPolicy.modal";
+import ServiceTerms from "./utils/serviceTerms";
+
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.container}>
       <div>
-        <p>This is a footer</p>
+        <div>GAMERNEST ENTERTAINMENT ®</div>
+        <div>
+          <PrivacyPolicy /> | <ServiceTerms />
+        </div>
       </div>
     </footer>
   );

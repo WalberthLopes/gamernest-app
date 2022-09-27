@@ -1,15 +1,10 @@
-import { Popup, Grid, Button, Header } from "semantic-ui-react";
+import { Popup, Grid } from "semantic-ui-react";
 
-// Functions
 import { signOut } from "../functions/signOut";
 
-// Bootstrap icons
-import { ImUser } from "react-icons/im";
+import styles from "../styles/popups.module.css";
 
-// Styles
-import styles from "../styles/header.module.css";
-
-const ProfilePopup = ({ username, email }: any) => {
+const ProfilePopup = ({ username }: any) => {
   const onSubmit = async () => {
     await signOut().then((response: any) => {
       if (response === true) {
@@ -23,16 +18,24 @@ const ProfilePopup = ({ username, email }: any) => {
       on="click"
       closeOnDocumentClick={true}
       position="bottom right"
-      trigger={<button className={styles.firstRowButton}>MINHA CONTA</button>}
+      trigger={
+        <button className={styles.signInButton}>
+          {username.toUpperCase()}
+        </button>
+      }
     >
-      <Grid centered={true}>
+      <Grid centered={true} className={styles.content}>
         <Grid.Row>
-          <Header>Olá {username}</Header>
-        </Grid.Row>
-        <Grid.Row>
-          <Button onClick={() => (location.href = "/profile")}>PERFIL</Button>
-
-          <Button onClick={() => onSubmit()}>SAIR</Button>
+          <button
+            className={styles.signInButton}
+            onClick={() => (location.href = `/account/${username}`)}
+          >
+            PERFIL
+          </button>
+          |
+          <button className={styles.signInButton} onClick={() => onSubmit()}>
+            SAIR
+          </button>
         </Grid.Row>
       </Grid>
     </Popup>

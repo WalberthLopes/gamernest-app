@@ -1,13 +1,8 @@
 import { useState } from "react";
-import { Popup, Grid, Button, Header } from "semantic-ui-react";
+import { Popup, Grid, Button } from "semantic-ui-react";
 
-// Functions
 import signIn from "../functions/signIn";
 
-// Icons
-import { ImEnter } from "react-icons/im";
-
-// Styles
 import styles from "../styles/popups.module.css";
 
 const SignInPopup = () => {

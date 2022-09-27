@@ -1,4 +1,15 @@
+import { useEffect } from "react";
+import { getCurrentUser } from "../functions/getCurrentUser";
+
 const Loading = () => {
+  useEffect(() => {
+    const getUser = async () => {
+      const user = await getCurrentUser();
+      if (!user) location.href = "/";
+    };
+    getUser();
+  }, []);
+
   return (
     <div
       style={{
