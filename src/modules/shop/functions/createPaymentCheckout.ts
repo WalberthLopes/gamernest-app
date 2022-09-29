@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const createPaymentCheckout = async (props: {}, userData: {}) => {
+const createPaymentCheckout = async (props: {}, userData: string) => {
   if (!userData) return;
 
   const response = await axios.post(

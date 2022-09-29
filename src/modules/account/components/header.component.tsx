@@ -1,56 +1,70 @@
-import { useState, useEffect } from "react";
-
-import { getCurrentUser } from "../../navigation/functions/getCurrentUser";
-import { isAuth } from "../../navigation/functions/isAuth";
-
-import ProfilePopup from "../../navigation/utils/profile.popup";
-import SignInPopup from "../../navigation/utils/signIn.popup";
-
 import styles from "../styles/header.module.css";
-import ProfileNavbar from "./navbar.component";
 
-const ProfileHeader = () => {
-  const [username, setUsername] = useState("");
+const ProfileHeader = ({ username }: any) => {
+  const path = location.pathname;
 
-  useEffect(() => {
-    const getUser = async () => {
-      let response = await getCurrentUser();
-      response?.map((element: any) => {
-        setUsername(element.username);
-      });
-    };
-    getUser();
-    isAuth();
-  }, []);
+  const onSubmit = () => {
+    localStorage.clear();
+    location.href = "/";
+  };
 
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.main}>
           <div className={styles.content}>
-            <div className={styles.companyName}>GAMERNEST</div>
+            <div className={styles.companyName}>CUBECAVE</div>
 
             <button
               onClick={() => (location.href = "/")}
               className={styles.button}
             >
-              CUBECAVE
+              HOME
             </button>
 
-            <button className={styles.button}>LOJA</button>
+            <button
+              className={
+                path === `/shop` ? styles.selectedButton : styles.button
+              }
+            >
+              LOJA
+            </button>
 
             <button className={styles.button}>NOTÍCIAS</button>
-          </div>
 
-          <div className={styles.login}>
-            <button className={styles.button}>SUPORTE</button>
+            <button
+              className={
+                path === `/forum` ? styles.selectedButton : styles.button
+              }
+            >
+              FÓRUM
+            </button>
 
-            {username ? <ProfilePopup username={username} /> : <SignInPopup />}
+            <button
+              className={
+                path === `/suporte` ? styles.selectedButton : styles.button
+              }
+            >
+              SUPORTE
+            </button>
+
+            <button
+              className={
+                path === `/account/${username}`
+                  ? styles.selectedButton
+                  : styles.button
+              }
+              onClick={() => (location.href = `/account/${username}`)}
+            >
+              PERFIL
+            </button>
+
+            <button className={styles.button} onClick={() => onSubmit()}>
+              SAIR
+            </button>
           </div>
         </div>
       </div>
-
-      <ProfileNavbar username={username} />
     </div>
   );
 };

@@ -15,7 +15,7 @@
 
 .content {
   display: grid;
-  grid-template-columns: min-content min-content min-content min-content;
+  grid-template-columns: repeat(8, [col-start] min-content [col-end]);
   column-gap: 10px;
 }
 
@@ -43,8 +43,17 @@
 }
 
 .button:hover {
-  color: lightgray;
+  color: gray;
   cursor: pointer;
+}
+
+.selectedButton {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: gray;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 @media screen and (max-width: 780px) {

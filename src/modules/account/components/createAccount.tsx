@@ -38,7 +38,13 @@ const CreateAccount = () => {
         password.trim()
       );
       setLoading(false);
-      setMessage(response?.data);
+      setMessage(response?.data.message);
+
+      if (response?.data.success) {
+        setTimeout(() => {
+          location.href = "/login";
+        }, 3000);
+      }
     } catch (error) {
       console.log(error);
     }

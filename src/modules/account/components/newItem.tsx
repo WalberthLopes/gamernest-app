@@ -142,7 +142,6 @@ const NewItem = () => {
               min={0}
               name="itemPos"
               onChange={(e) => setPosition(e.target.valueAsNumber)}
-              defaultValue={0}
             />
           </div>
 

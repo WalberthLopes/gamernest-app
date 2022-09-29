@@ -1,13 +1,10 @@
 import { useEffect } from "react";
-import { getCurrentUser } from "../functions/getCurrentUser";
+
+import Auth from "../../account/functions/authentication";
 
 const Loading = () => {
   useEffect(() => {
-    const getUser = async () => {
-      const user = await getCurrentUser();
-      if (!user) location.href = "/";
-    };
-    getUser();
+    Auth();
   }, []);
 
   return (

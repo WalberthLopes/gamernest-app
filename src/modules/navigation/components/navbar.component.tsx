@@ -1,52 +1,51 @@
-// Functions
+// Components
 import MobileMenuComponent from "./mobileMenu.component";
 
 // Styles
 import styles from "../styles/navbar.module.css";
 
-// Server logo
-import logo from "../images/logo.png";
-
 const Navbar = () => {
+  const path = location.pathname;
+
   return (
     <div className={styles.container}>
       <div className={styles.main}>
-        <img className={styles.logo} src={logo} />
-
         <div className={styles.desktop}>
-          <div />
-
           <button
             onClick={() => (location.href = "/")}
-            className={styles.button}
+            className={path === "/" ? styles.selectedButton : styles.button}
           >
             HOME
           </button>
 
           <button
             onClick={() => (location.href = "/forum")}
-            className={styles.button}
+            className={
+              path === "/forum" ? styles.selectedButton : styles.button
+            }
           >
             FÓRUM
           </button>
 
           <button
             onClick={() => (location.href = "/noticias")}
-            className={styles.button}
+            className={
+              path === "/noticias" ? styles.selectedButton : styles.button
+            }
           >
             NOTÍCIAS
           </button>
 
           <button
             onClick={() => (location.href = "/wiki")}
-            className={styles.button}
+            className={path === "/wiki" ? styles.selectedButton : styles.button}
           >
             WIKI
           </button>
 
           <button
             onClick={() => (location.href = "/shop")}
-            className={styles.button}
+            className={path === "/shop" ? styles.selectedButton : styles.button}
             style={{ borderRight: "1px groove rgb(24, 16, 24)" }}
           >
             LOJA

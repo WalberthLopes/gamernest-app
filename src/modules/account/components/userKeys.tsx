@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { getUserKeys } from "../functions/getUserKeys";
 
-import { BsKeyFill, BsTrashFill } from "react-icons/bs";
+import { BsTrashFill } from "react-icons/bs";
 
 import styles from "../styles/userKeys.module.css";
 import ShowKey from "../utils/showKey";
@@ -12,7 +12,7 @@ const UserKeys = ({ props }: any) => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await getUserKeys(props.uuid);
+      const response = await getUserKeys(props);
       setKeys(response);
     };
     getData();
