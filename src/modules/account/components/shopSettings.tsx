@@ -1,17 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "../styles/shopSettings.module.css";
 
 import NewItem from "./newItem";
 import UserKeys from "./userKeys";
 
-const ShopSettings = ({ props }: any) => {
+import jwtDecode from "jwt-decode";
+
+const ShopSettings = () => {
   const [component, setComponent] = useState(<div />);
 
   const [buttonColor, setButtonColor] = useState("");
   const [buttonName, setButtonName] = useState("");
 
-  const perms: string = props.perms;
+  const [perms, setPerms] = useState("");
+  const [uuid, setUuid] = useState("");
+
+  useEffect(() => {
+    const getToken = localStorage.getItem("token");
+
+    if (getToken) {
+      const token = getToken.split(" ");
+
+      if (token) {
+        const decoded: any = jwtDecode(token?.[1]);
+
+        setPerms(decoded.perms);
+        setUuid(decoded.uuid);
+      } else {
+        console.log("No token has been found.");
+      }
+    } else {
+      console.log("No bearer has been found.");
+    }
+  }, []);
 
   const handleComponentChange = (e: any) => {
     setButtonColor("rgb(32, 21, 32)");
@@ -77,7 +99,7 @@ const ShopSettings = ({ props }: any) => {
           }
           name="myKeys"
           onClick={(e) => {
-            handleComponentChange(e), setComponent(<UserKeys props={props} />);
+            handleComponentChange(e), setComponent(<UserKeys props={uuid} />);
           }}
         >
           MINHAS KEYS

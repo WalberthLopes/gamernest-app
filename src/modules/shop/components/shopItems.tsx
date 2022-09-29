@@ -6,25 +6,40 @@ import itemStyle from "../../account/styles/newItem.module.css";
 import { getProductsData } from "../functions/getProducts";
 import ItemDetails from "../utils/itemDetails";
 import { createPaymentCheckout } from "../functions/createPaymentCheckout";
-import { getCurrentUser } from "../../navigation/functions/getCurrentUser";
+
+import jwtDecode from "jwt-decode";
 
 const ShopItems = () => {
   const [data, setData] = useState([]);
-  const [userData, setUserData] = useState({});
+  const [user, setUser] = useState("");
 
   useEffect(() => {
+    const getToken = localStorage.getItem("token");
+
+    if (getToken) {
+      const token = getToken.split(" ");
+
+      if (token) {
+        const decoded: any = jwtDecode(token?.[1]);
+
+        setUser(decoded.uuid);
+      } else {
+        console.log("No token has been found.");
+      }
+    } else {
+      console.log("No bearer has been found.");
+    }
+
     const getData = async () => {
       const response = await getProductsData();
-      const userResponse = await getCurrentUser();
 
       setData(response.data);
-      setUserData(userResponse?.[0]);
     };
     getData();
   }, []);
 
   const handleCheckout = async (props: {}) => {
-    const response = await createPaymentCheckout(props, userData);
+    const response = await createPaymentCheckout(props, user);
 
     location.href = response;
   };
@@ -61,7 +76,7 @@ const ShopItems = () => {
                 <div className={itemStyle.contentValue}>R$ {props.price}</div>
 
                 <div className={itemStyle.contentButton}>
-                  {userData ? (
+                  {user ? (
                     <button
                       className={itemStyle.button}
                       onClick={() => handleCheckout(props)}

@@ -9,21 +9,16 @@
   margin-right: auto;
 }
 
-.logo {
-  width: 200px;
-  position: absolute;
-  top: 50px;
-}
-
 .desktop {
   display: grid;
-  grid-template-columns: 150px max-content max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content max-content;
   height: min-content;
   background-color: rgb(32, 21, 32);
   border: 1px groove rgb(24, 16, 24);
   margin-top: 10px;
-  width: 1200px;
+  width: 100%;
   margin-left: auto;
+  justify-content: center;
 }
 
 .button {
@@ -40,8 +35,13 @@
   cursor: pointer;
 }
 
-.button:not(.btn):focus {
+.selectedButton {
+  padding: 25px;
   background-color: rgb(14, 9, 14);
+  border: none;
+  border-left: 1px groove rgb(24, 16, 24);
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 @media screen and (min-width: 780px) {

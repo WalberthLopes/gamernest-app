@@ -1,37 +1,40 @@
 import { useEffect, useState } from "react";
-import { getCurrentUser } from "../navigation/functions/getCurrentUser";
+
+import jwtDecode from "jwt-decode";
 
 import ProfileHeader from "./components/header.component";
 import BodyComponent from "./components/body.component";
 import Loading from "../navigation/components/loading.component";
 
-type User = {
-  coins: number;
-  created_at: string;
-  discord: string;
-  email: string;
-  perms: string;
-  rank: string;
-  role: string;
-  username: string;
-};
-
 const Profile = () => {
-  const [props, setProps] = useState<User>();
+  const [user, setUser] = useState(false);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await getCurrentUser();
-      setProps(response?.[0]);
-    };
-    getData();
+    const getToken = localStorage.getItem("token");
+
+    if (getToken) {
+      const token = getToken.split(" ");
+
+      if (token) {
+        const decoded: any = jwtDecode(token?.[1]);
+
+        setUsername(decoded.username);
+
+        decoded.username ? setUser(true) : setUser(false);
+      } else {
+        console.log("No token has been found.");
+      }
+    } else {
+      console.log("No bearer has been found.");
+    }
   }, []);
 
-  return props ? (
+  return user ? (
     <div>
-      <ProfileHeader />
+      <ProfileHeader username={username} />
 
-      <BodyComponent props={props} />
+      <BodyComponent />
     </div>
   ) : (
     <Loading />
