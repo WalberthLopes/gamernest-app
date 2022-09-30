@@ -15,7 +15,11 @@ const CubecavePopup = () => {
         </Grid.Row>
 
         <Grid.Row>
-          <Button>ACESSE</Button>
+          <Button
+            onClick={() => (location.href = "https://discord.gg/dKYRfRjM8t")}
+          >
+            ACESSE
+          </Button>
         </Grid.Row>
       </Grid>
     </Popup>
