@@ -42,7 +42,7 @@ const CreateAccount = () => {
 
       if (response?.data.success) {
         setTimeout(() => {
-          location.href = "/login";
+          location.href = "/";
         }, 3000);
       }
     } catch (error) {

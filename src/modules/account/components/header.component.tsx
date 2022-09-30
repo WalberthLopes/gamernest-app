@@ -26,16 +26,25 @@ const ProfileHeader = ({ username }: any) => {
               className={
                 path === `/shop` ? styles.selectedButton : styles.button
               }
+              onClick={() => (location.href = "/shop")}
             >
               LOJA
             </button>
 
-            <button className={styles.button}>NOTÍCIAS</button>
+            <button
+              className={
+                path === `/noticias` ? styles.selectedButton : styles.button
+              }
+              onClick={() => alert("Função indisponível.")}
+            >
+              NOTÍCIAS
+            </button>
 
             <button
               className={
                 path === `/forum` ? styles.selectedButton : styles.button
               }
+              onClick={() => alert("Função indisponível.")}
             >
               FÓRUM
             </button>
@@ -44,6 +53,7 @@ const ProfileHeader = ({ username }: any) => {
               className={
                 path === `/suporte` ? styles.selectedButton : styles.button
               }
+              onClick={() => alert("Função indisponível. Acesse o discord.")}
             >
               SUPORTE
             </button>
