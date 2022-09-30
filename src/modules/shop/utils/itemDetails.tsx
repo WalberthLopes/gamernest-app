@@ -11,7 +11,6 @@ const ItemDetails = ({ props }: any) => {
 
   const desc = props.split("\n");
 
-  console.log(desc);
   return (
     <Modal
       open={open}
