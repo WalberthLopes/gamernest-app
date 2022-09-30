@@ -4,10 +4,13 @@ import { useState } from "react";
 
 import { BsQuestionCircle } from "react-icons/bs";
 
+import styles from "../styles/itemDetails.module.css";
+
 const ItemDetails = ({ props }: any) => {
   const [open, setOpen] = useState(false);
 
   const desc = props.split("\n");
+
   return (
     <Modal
       open={open}
@@ -20,30 +23,23 @@ const ItemDetails = ({ props }: any) => {
             paddingLeft: "20px",
             paddingRight: "20px",
             paddingTop: "5px",
+            paddingBottom: "5px",
             backgroundColor: "black",
             color: "gray",
             border: "1px solid gray",
           }}
         >
-          <Grid.Row>
-            {desc.map((e: string, i: number) => {
-              return <p key={i}>- {e}</p>;
-            })}
+          {desc.map((e: string, i: number) => {
+            return (
+              <Grid.Row key={i} style={{ padding: "0" }}>
+                <p>- {e}</p>
+              </Grid.Row>
+            );
+          })}
 
-            <button
-              onClick={() => setOpen(false)}
-              style={{
-                backgroundColor: "black",
-                color: "red",
-                position: "absolute",
-                left: "101%",
-                bottom: "98%",
-                borderRadius: "10px",
-              }}
-            >
-              X
-            </button>
-          </Grid.Row>
+          <button onClick={() => setOpen(false)} className={styles.closeButton}>
+            X
+          </button>
         </Grid>
       }
     />

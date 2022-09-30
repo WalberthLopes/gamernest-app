@@ -1,0 +1,14 @@
+.closeButton {
+  background-color: black;
+  color: red;
+  position: absolute;
+  left: 98%;
+  bottom: 100%;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+  background-color: rgb(27, 27, 27);
+}
